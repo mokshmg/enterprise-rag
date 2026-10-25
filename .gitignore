@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+
+# Tools
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Secrets & local settings
+.env
+.claude/settings.local.json
+
+# Data (never commit PDFs)
+data/raw/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
