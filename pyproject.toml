@@ -7,7 +7,6 @@ authors = [{ name = "Moksh Grover", email = "mokshmg@gmail.com" }]
 requires-python = ">=3.14"
 dependencies = [
     "fastapi>=0.162.0",
-    "httpx>=0.28.1",
     "pre-commit>=4.7.0",
     "pydantic-settings>=2.16.1",
     "pytest>=9.1.1",
@@ -30,3 +29,11 @@ select = [
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.16.0",
+    "pre-commit>=4.7.0",
+    "pytest>=9.1.1",
+    "ruff>=0.17.2",
+]
