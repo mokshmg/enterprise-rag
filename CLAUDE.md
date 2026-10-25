@@ -4,10 +4,19 @@ Document Q&A over public banking documents (RBI circulars, product T&Cs, fee sch
 with citations, measured by an evaluation pipeline. Portfolio project, built as a learning exercise.
 
 ## Stack
-- Python 3.12, managed with **uv** (never use pip directly; use `uv add <pkg>`)
+- Python 3.12, managed with **uv** (never use pip or `uv pip install`)
 - FastAPI + Pydantic v2, pydantic-settings for config
 - Postgres 16 + pgvector (runs in Docker via docker-compose)
 - Streamlit (UI), pytest (tests), ruff (lint + format), pre-commit
+
+## Dependencies (requirements.txt workflow)
+- Runtime packages are listed in `requirements.txt`; dev-only packages in `requirements-dev.txt`.
+- To add a package: add it to the right file, then run
+  `uv add -r requirements.txt` or `uv add --dev -r requirements-dev.txt`.
+- To remove a package: delete its line from the file AND run `uv remove <pkg>`
+  (or `uv remove --dev <pkg>`).
+- Never run `uv add <pkg>` directly; the txt files must always match pyproject.toml.
+- Ask me before adding any new dependency.
 
 ## Commands
 - Install deps: `uv sync`
